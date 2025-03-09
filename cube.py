@@ -142,7 +142,6 @@ class RubikCube:
             index = 0
             size = 3  # 3x3 Cube
             
-            # 初始化 6 個面
             self.state["U"] = []
             self.state["L"] = []
             self.state["F"] = []
@@ -150,19 +149,16 @@ class RubikCube:
             self.state["B"] = []
             self.state["D"] = []
             
-            # 上 (U)
             self.state["U"] = [list(cube_str[index + i * size : index + (i + 1) * size]) for i in range(size)]
             index += size * size
-            
-            # 左 (L), 前 (F), 右 (R), 後 (B)
+
             for row in range(size):
                 self.state["L"].append(list(cube_str[index : index + 3]))
                 self.state["F"].append(list(cube_str[index + 3: index + 6]))
                 self.state["R"].append(list(cube_str[index + 6: index + 9]))
                 self.state["B"].append(list(cube_str[index + 9: index + 12]))
                 index += 4 * size
-            
-            # 下 (D)
+
             self.state["D"] = [list(cube_str[index + i * size : index + (i + 1) * size]) for i in range(size)]
 
         
