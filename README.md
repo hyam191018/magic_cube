@@ -1,1 +1,1 @@
-# magic_cube
+# Just for fun!
